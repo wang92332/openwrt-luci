@@ -13,4 +13,8 @@ PKG_DATE:=20200824
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
+define Build/Prepare
+	chmod +x ./root/etc/init.d/socat
+endef
+
 # call BuildPackage - OpenWrt buildroot signature
