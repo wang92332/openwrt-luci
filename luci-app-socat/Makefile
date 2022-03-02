@@ -11,10 +11,14 @@ LUCI_PKGARCH:=all
 PKG_RELEASE:=3
 PKG_DATE:=20200824
 
-include $(TOPDIR)/feeds/luci/luci.mk
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 define Build/Prepare
-	chmod 0755 ./root/etc/init.d/socat
+	chmod 0755 $(PKG_BUILD_DIR)/root/etc/init.d/socat
 endef
+
+include $(TOPDIR)/feeds/luci/luci.mk
+
+
 
 # call BuildPackage - OpenWrt buildroot signature
