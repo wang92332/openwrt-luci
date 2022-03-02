@@ -14,11 +14,5 @@ PKG_DATE:=20200824
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
-define FixMod
-	chmod 0755 $(PKG_INSTALL_DIR)/etc/init.d/socat
-endef
-
-all:
-	$(call FixMod)
 
 # call BuildPackage - OpenWrt buildroot signature
